@@ -11,7 +11,7 @@ class HandlePrice:
     
     def check_price(self):
         self.driver.get(self.link)
-        if(self.shoesize>0):
+        if(int(self.shoesize)>0):
             try:
                 sizelist = self.driver.find_elements(By.XPATH, "//li[contains(@id, 'swatch') and contains(@id, '-size')]")
                 for size in sizelist:

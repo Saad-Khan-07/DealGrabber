@@ -35,9 +35,9 @@ class SendAvailabilityMail:
             server.login(email, pwd)
             server.sendmail(email, self.receiver, msg.as_string())
             server.quit()
-            print("✅ Email sent successfully!")
+            print("Email sent successfully!")
         except Exception as e:
-            print(f"❌ Error: {e}")
+            print(f"Error: {e}")
 
 class DealNotiyMail:
     def __init__(self, receiver, name, price, link):
@@ -67,9 +67,9 @@ class DealNotiyMail:
             server.login(email, pwd)
             server.sendmail(email, self.receiver, msg.as_string())
             server.quit()
-            print("✅ Email sent successfully!")
+            print("Email sent successfully!")
         except Exception as e:
-            print(f"❌ Error: {e}")
+            print(f"Error: {e}")
 
 class ConfirmationMail:
     def __init__(self, receiver):
@@ -93,9 +93,9 @@ class ConfirmationMail:
             server.login(email, pwd)
             server.sendmail(email, self.receiver, msg.as_string())
             server.quit()
-            print("✅ Email sent successfully!")
+            print("Email sent successfully!")
         except Exception as e:
-            print(f"❌ Error: {e}")
+            print(f"Error: {e}")
 
 
 

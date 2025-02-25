@@ -22,7 +22,7 @@ class CheckAvailability:
                 sizelist = self.driver.find_elements(By.XPATH, "//li[contains(@id, 'swatch') and contains(@id, '-size')]")
                 sizeoption=True
                 if not sizelist:
-                    print("❌ No size options available for this product.")
+                    print("No size options available for this product.")
                     sizeoption=False
                     # Exit early
                 if sizeoption:
@@ -38,11 +38,11 @@ class CheckAvailability:
                             continue  # Continue if the specific size is not found
                     
                     if not shoe_size_found:
-                        print(f"❌ Shoe size {self.shoesize} is not available.")
+                        print(f"Shoe size {self.shoesize} is not available.")
                         return  # Exit early to prevent false availability messages
 
             except NoSuchElementException:
-                print(f"❌ No size {self.shoesize} available for this shoe.")
+                print(f"No size {self.shoesize} available for this shoe.")
                 return  # Exit early
 
         name = self.driver.find_element(By.CSS_SELECTOR, "h1")
@@ -69,13 +69,13 @@ class CheckAvailability:
         # Decision Making
         if is_sold_out:
             self.available=False
-            print("⚠️ The product is sold out. I'll notify you when it's available.")
+            print("The product is sold out. I'll notify you when it's available.")
         elif is_coming_soon:
             self.available=False
-            print("⚠️ The product hasn't come on the platform yet! I'll notify you when it's available.")
+            print("The product hasn't come on the platform yet! I'll notify you when it's available.")
         else:
             self.available=True
-            print("✅ The product is available!")
+            print("The product is available!")
         return {"name": nametext, "link": self.link, "price": curprice, "availability": self.available}
         
 
